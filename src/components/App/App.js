@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import getAPIData from '../../APICalls';
+import Reservations from '../Reservations/reservations'
 
 class App extends Component {
   constructor() {
@@ -19,7 +20,7 @@ class App extends Component {
   componentDidUpdate = () => {
     console.log(this.state.reservations)
   }
-  
+
   render() {
     return (
       <div className="App">
