@@ -1,0 +1,8 @@
+.reservation-container {
+  height: 25vh;
+  width: 20vw;
+  border: turquoise;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
