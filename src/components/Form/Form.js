@@ -1,12 +1,10 @@
 import './Form.css'
-// import App from '../App/App'
 import React, { Component } from 'react';
 
 class Form extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      // reservations: [],
       name: "",
       date: "",
       time: "",
