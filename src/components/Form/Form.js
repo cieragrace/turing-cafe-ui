@@ -1,17 +1,16 @@
 import './Form.css'
-import App from '../App/App'
+// import App from '../App/App'
 import React, { Component } from 'react';
 
 class Form extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
-      reservations: [],
+      // reservations: [],
       name: "",
       date: "",
       time: "",
       number: null,
-      id: Date.now()
     }
   }
 
@@ -29,6 +28,20 @@ class Form extends Component {
 
   handleNumberChange = (event) => {
     this.setState({number: event.target.value})
+  }
+
+  clearInputs = () => {
+    this.setState({ name: "", date: "", time: "", number: null})
+  }
+
+  submitReservationRequest = (event) => {
+    event.preventDefault()
+    const newReservation = {
+      id: Date.now(),
+      ...this.state
+    }
+    this.props.addReservation(newReservation)
+    this.clearInputs()
   }
 
   render() {
@@ -49,7 +62,7 @@ class Form extends Component {
           onChange={this.handleDateChange}>
         </input>
         <input
-          type='clock'
+          type='time'
           placeholder='What time are you thinking?'
           // name=''
           value={this.state.time}
@@ -62,7 +75,9 @@ class Form extends Component {
           value={this.state.number}
           onChange={this.handleNumberChange}>
         </input>
-        <button></button>
+        <button
+        onClick={event => this.submitReservationRequest(event)}>
+        </button>
       </div>
     )
   }
