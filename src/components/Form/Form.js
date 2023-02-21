@@ -1,6 +1,6 @@
 import './Form.css'
 import App from '../App/App'
-import { Component } from 'react'
+import React, { Component } from 'react';
 
 class Form extends Component {
   constructor() {
@@ -10,7 +10,8 @@ class Form extends Component {
       name: "",
       date: "",
       time: "",
-      number: num
+      number: null,
+      id: Date.now()
     }
   }
 
@@ -30,7 +31,6 @@ class Form extends Component {
     this.setState({number: event.target.value})
   }
 
-
   render() {
     return(
       <div className='form-container'>
@@ -38,25 +38,29 @@ class Form extends Component {
           type='text'
           placeholder='Please Enter Your Name'
           // name='name'
-          value={this.handleNameChange}>
+          value={this.state.name}
+          onChange={this.handleNameChange}>
         </input>
         <input
           type='date'
           placeholder='When would you like to come in?'
           // name=''
-          value={this.handleDateChange}>
+          value={this.state.date}
+          onChange={this.handleDateChange}>
         </input>
         <input
           type='clock'
           placeholder='What time are you thinking?'
           // name=''
-          value={this.handleTimeChange}>
+          value={this.state.time}
+          onChange={this.handleTimeChange}>
         </input>
         <input
           type='number'
           placeholder='How many in your Party?'
           // name=''
-          value={this.handleNumberChange}>
+          value={this.state.number}
+          onChange={this.handleNumberChange}>
         </input>
         <button></button>
       </div>
