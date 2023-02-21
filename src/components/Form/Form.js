@@ -77,6 +77,7 @@ class Form extends Component {
         </input>
         <button
         onClick={event => this.submitReservationRequest(event)}>
+          Make Reservation
         </button>
       </div>
     )

@@ -1,7 +1,7 @@
 describe('Main Reservations Page', () => {
   beforeEach(() => {
     cy.request('http://localhost:3001/api/v1/reservations')
-    // cy.intercept('GET', 'http://localhost:3000/', {fixture: '../fixtures/mainPage.json'})
+    cy.intercept('GET', 'http://localhost:3000/', {fixture: '../fixtures/mainPage.json'})
   })
   it('should display a logo on main page',() => {
     cy.get('.app-title').contains("Turing Cafe Reservations")
