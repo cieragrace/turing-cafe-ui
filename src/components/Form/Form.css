@@ -1,0 +1,17 @@
+.form-container {
+  width: 100vw;
+  height: 15vh;
+}
+
+input {
+  width: 15vw;
+  height: 30px;
+  margin:25px;
+}
+
+button {
+  width: 15vw;
+  height: 30px;
+  margin:25px;
+  background-color: #278080;
+}
