@@ -1,5 +1,5 @@
-function getAPIData(info) {
-  return fetch (`http://localhost:3001/api/v1/${info}`)
+function getAPIData() {
+  return fetch ('http://localhost:3001/api/v1/reservations')
   .then((res)=> res.json())
 }
 
